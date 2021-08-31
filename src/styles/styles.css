@@ -5,10 +5,16 @@
 
 @layer base {
 
+    a {
+        @apply link link-hover;
+    }
+    textarea {
+        resize: none;
+    }
 }
 
 @layer components {
-
+    
 }
 
 @layer components {

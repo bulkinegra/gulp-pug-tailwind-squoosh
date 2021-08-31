@@ -1,1 +1,14 @@
-h1 Все ок!
+-
+    var items = [
+        { img:"ph.jpg", alt:"ph_alt1" },
+        { img:"ph.jpg", alt:"ph_alt2" },
+        { img:"ph.jpg", alt:"ph_alt3" },
+        { img:"ph.jpg", alt:"ph_alt4" },
+        { img:"ph.jpg", alt:"ph_alt5" },
+    ]
+    
+div(class="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center w-max mx-auto pt-8")
+    each i in items
+        a(href="" class="block w-28 h-28 rounded-box shadow-md hover:shadow-none transform hover:scale-95 transition-all cursor-pointer relative overflow-hidden")
+            img(src="img/"+i.img, alt=i.alt class="w-full h-full object-cover")
+
