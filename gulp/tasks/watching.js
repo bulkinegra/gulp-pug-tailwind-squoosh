@@ -16,7 +16,7 @@ module.exports = function watching() {
 	});
 
 
-    watch(process.env.SRC_DIR+'/pages/**/*.pug', series('html'));
+    watch(process.env.SRC_DIR+'/pages/**/*.html', series('html'));
     watch(process.env.SRC_DIR+'/styles/**/*.css', series('style'));
     watch('tailwind.config.js', series('style'));
     watch(process.env.SRC_DIR+'/js/**/*.js', series('script'));

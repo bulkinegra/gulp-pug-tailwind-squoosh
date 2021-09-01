@@ -2,8 +2,8 @@ module.exports = {
   purge: {
     enabled: false,
     content: [
-      './dist/*.html',
-      './dist/*.js'
+      './build/*.html',
+      './build/*.js'
     ],
     options: {
       safelist: [

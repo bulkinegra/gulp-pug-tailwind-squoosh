@@ -1,16 +1,12 @@
 const { src, dest } = require('gulp');
-const plumber = require('gulp-plumber');
-const htmlmin = require('gulp-htmlmin');
-const pug = require('gulp-pug');
+const fileinclude = require('gulp-file-include');
 
 
 module.exports = function html() {
-    return src(process.env.SRC_DIR+'/pages/*.pug')
-    .pipe(plumber())
-    .pipe(pug())
-    .pipe(htmlmin({
-        collapseWhitespace: true,
-        removeComments: true
-    }))
+    return src(process.env.SRC_DIR+'/pages/*.html')
+    .pipe(fileinclude({
+        prefix: '@',
+        basepath: '@file'
+      }))
     .pipe(dest(process.env.BUILD_DIR))
 }
