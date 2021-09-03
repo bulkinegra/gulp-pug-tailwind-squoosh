@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="bg-base-200" lang="en" data-theme="light">
+@include('../common/head.html')
+<body>
+    <p>test</p>
+    @include('../common/header.html')
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center w-max mx-auto pt-8">
+        
+        {% if lexicon_list %}
+
+        {% for lexicon in lexicon_list %}
+        <a class="block w-28 h-28 rounded-box shadow-md hover:shadow-none transform hover:scale-95 transition-all cursor-pointer relative overflow-hidden"
+            href="{% url 'lexicon-lesson-list' lexicon.id %}">
+            {% load static %}
+            <img class="w-full h-full object-cover" src="{% static lexicon.picture_url %}" alt="placeholder" />
+        </a>
+        {% endfor %}
+        
+        {% else %}
+        <p>There are no lexicon.</p>
+        {% endif %} 
+
+    </div>
+    @include('../common/footer.html')
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+</html>
+

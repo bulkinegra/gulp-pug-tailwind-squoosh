@@ -19,6 +19,6 @@ task('inline_source', tasks.inline_source)
 task('resize_img', tasks.resize_img)
 task('min_img', series('html', 'style', 'script'))
 
-task('default', series('html', 'style', 'script', parallel('watching')))
+task('default', series('html', 'script', 'inline_source', parallel('watching')))
 
 task('build', series('html', 'style', 'script', 'ttf', 'inline_source'))
