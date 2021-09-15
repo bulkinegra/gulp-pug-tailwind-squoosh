@@ -3,12 +3,12 @@
 @include('../common/head.html')
 <body>
     @include('../common/header.html')
-    {% if lesson_list %}
+    {% if list_item %}
     <div class="m-4 md:mx-auto flex flex-col md:flex-row max-w-3xl pt-8 gap-4 md:gap-14">
         <div class="flex flex-row md:flex-col flex-none gap-10 md:gap-4">   
-            
+            {% load static %}
             <div class="w-28 h-28 rounded-box shadow-md overflow-hidden">
-                <img class="w-full h-full object-cover" src="" alt="" />
+                <img class="w-full h-full object-cover" src="{% static lexicon.picture_url %}" alt="" />
             </div>
 
             <div class="flex flex-col gap-2">
@@ -21,9 +21,9 @@
         </div>
 
         <div class="flex flex-col flex-grow gap-3">
-            {% for lesson in lesson_list %}
-            <a class="rounded-box p-4 bg-base-100 shadow-md block hover:shadow-none transform hover:scale-95 hover:-translate-x-2 transition-all"
-                href="{% url 'lesson' lesson.lexicon.id lesson.id %}"> <b>{{ lesson.name }}</b> - {{ lesson.description }}</a>
+            {% for i in list_item %}
+            <a class="no-underline rounded-box p-4 bg-base-100 shadow-md block hover:shadow-none transform hover:scale-95 hover:-translate-x-2 transition-all"
+                href="{% url 'lesson' i.id %}"> <b>{{i.lexicon_lesson__position}}. {{ i.name }}</b> - {{ i.description }}</a>
             {% endfor %}
             
     {% else %}
@@ -33,7 +33,6 @@
     </div>
     @include('../common/footer.html')
 </body>
-<script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
 </html>
   
   

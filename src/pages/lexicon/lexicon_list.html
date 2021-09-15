@@ -10,7 +10,7 @@
 
         {% for lexicon in lexicon_list %}
         <a class="block w-28 h-28 rounded-box shadow-md hover:shadow-none transform hover:scale-95 transition-all cursor-pointer relative overflow-hidden"
-            href="{% url 'lexicon-lesson-list' lexicon.id %}">
+            href="{% url 'lexicon' lexicon.id %}">
             {% load static %}
             <img class="w-full h-full object-cover" src="{% static lexicon.picture_url %}" alt="placeholder" />
         </a>
@@ -23,6 +23,5 @@
     </div>
     @include('../common/footer.html')
 </body>
-<script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
 </html>
 

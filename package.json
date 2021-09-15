@@ -36,6 +36,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.0",
     "gulp-responsive": "^3.0.1",
+    "gulp-shell": "^0.8.0",
     "gulp-squoosh": "^0.8.0",
     "gulp-svgmin": "^4.0.1",
     "gulp-ttftowoff2": "^1.0.1",
