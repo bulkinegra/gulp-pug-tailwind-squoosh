@@ -1,1 +1,2 @@
-TODO: Изменить рпедставление списка уроков
+TODO: Choose themes in tailwind.config.js (set it into <html date-theme="...">)
+TODO: Set all dirs in .env.json

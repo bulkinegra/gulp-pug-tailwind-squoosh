@@ -1,6 +1,5 @@
 const { src, dest } = require('gulp');
-const fileinclude = require('gulp-file-include');
-var multiDest = require('gulp-multi-dest');
+var extender = require('gulp-html-extend')
 
 
 module.exports = function html() {
@@ -8,9 +7,6 @@ module.exports = function html() {
       process.env.SRC_DIR+'/pages/**/*.html',
       '!'+process.env.SRC_DIR+'/pages/common/*.html',
       '!'+process.env.SRC_DIR+'/pages/include/*.html'])
-    .pipe(fileinclude({
-        prefix: '@',
-        basepath: '@file'
-      }))
+    .pipe(extender({annotations:true,verbose:false, root:'src/pages'}))
     .pipe(dest(process.env.BUILD_DIR))
 }

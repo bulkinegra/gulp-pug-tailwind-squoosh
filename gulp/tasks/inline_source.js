@@ -16,7 +16,7 @@ module.exports = function inline_source() {
     }
 
     source.pipe(inlinesource())
-    .pipe(dest(process.env.DJANGO_FRONT_DIR));
+    .pipe(dest(process.env.DIST_DIR));
     return source;
 
     

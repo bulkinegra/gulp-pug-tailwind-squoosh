@@ -1,1 +1,1 @@
-console.log('Все ок!')
+console.log('Script is here!')
